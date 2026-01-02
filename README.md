@@ -17,7 +17,7 @@
 	```
 - Open the provided URL (usually http://localhost:8080).
 ## Demo
-![demo](demo.mov)
+![demo](demo.gif)
 
 ## Core features
 - Use of Object Oriented programming (OOP) throughout most of the codebase.
