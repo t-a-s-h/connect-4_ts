@@ -1,0 +1,33 @@
+{
+  "name": "connect-4",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --inspect ./out/ts/tests/",
+    "test1": "./node_modules/.bin/mocha --inspect",
+    "build": "tsc",
+    "start": "node out/ts/game.js"
+  },
+  "devDependencies": {
+    "@types/chai": "^5.2.3",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.10.0",
+    "chai": "^6.2.1",
+    "mocha": "^11.7.5",
+    "typescript": "^5.9"
+  },
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "outDir": "./out"
+  },
+  "description": "",
+  "main": "game.js",
+  "dependencies": {
+    "undici-types": "^7.16.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

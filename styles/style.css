@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+
+@keyframes flash-red {
+    to {
+        border: 0.25em solid #5a0000;
+        background-color: red;
+        box-shadow: inset 0.5em 0.5em darkred;
+    }
+}
+
+@keyframes flash-blue {
+    to {
+        border: 0.25em solid #00005a;
+        background-color: blue;
+        box-shadow: inset 0.5em 0.5em darkblue;
+    }
+}
+
+:root, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: "Schoolbell", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: larger;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: hsl(208, 100%, 90%);
+}
+
+h1 {
+    margin: 0.5em 0 0;
+    text-align: center;
+}
+
+#game {
+    box-sizing: content-box;
+    position: relative;
+    margin: 1em auto 1em auto;
+    padding: 1rem;
+    inset: 0;
+    height: 540px;
+    width: 700px;
+    max-width: 100vw;
+    min-width: 350px;
+    max-height: calc(100vw * 6 / 7);
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: #2b3450;
+    border-radius: 2em;
+    align-items: end;
+    box-shadow: inset -3em -1.5em #455999;
+}
+
+#game > div {
+    cursor: pointer;
+    background-image: linear-gradient(to right, hsl(225, 50%, 18%) 0%, hsl(225, 50%, 18%), 25%,#455999 25%,#455999 45%,  hsl(225, 55%, 70%) 45%,hsl(225, 55%, 70%) 50%,hsl(225, 55%, 70%) 60%,hsl(225, 50%, 55%) 60%, hsl(225, 50%, 55%) 90%, hsl(225, 50%, 13%) 90%,hsl(225, 50%, 13%) 100%);
+    box-shadow: inset -0.5em -0.5em hsl(225, 50%, 13%),inset 1.25em 1.25em hsl(226, 50%, 38%),inset 1.75em 1.75em #455999;
+    border-radius: 999px;
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    border: 0.25em solid #1c1f28;
+    box-sizing: border-box;
+    justify-content: end;
+}
+
+#game > div > div, #prompt > div > div {
+    border: 0.25em solid #5a0000;
+    background-color: red;
+    box-sizing: border-box;
+    height: calc((100% / 6));
+    border-radius: 999px;
+    box-shadow: inset 0.5em 0.5em darkred;
+}
+
+#game > div > div.isX,#prompt > div > div.isX  {
+    border: 0.25em solid #00005a;
+    background-color: blue;
+    box-shadow: inset 0.5em 0.5em darkblue;
+}
+
+#game > div:hover > div:last-child::after, #game > div:hover:empty::after {
+    content: "";
+    padding: 0;
+    border-bottom: 5px solid white;
+    position: relative;
+    width: 100%;
+    display: block;
+    bottom: 0.5em;
+}
+
+#game > div:hover:empty::after {
+    bottom: 0;
+}
+
+#game > div:hover > div:nth-child(6)::after {
+    content: none;
+}
+
+#game > :has(:nth-child(6)) {
+    cursor:  default !important;
+}
+
+#modal {
+    display: block;
+    background-color: #00005a88;
+    position: absolute;
+    inset: 0;
+    opacity: 1;
+    display: block;
+    height: 100vh;
+    width: 100vw;
+    margin: auto;
+    inset: 0;
+    position: absolute;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#modal button {
+    transition: all 0.5s ease;
+    cursor: pointer;
+    all: unset;
+    inset: 0;
+    margin: auto;
+    background-color: aliceblue;
+    color: #00005a;
+    height: 20vh;
+    width: 20vw;;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+#modal button:hover {
+    transition: all 0.5s ease;
+    transform: scale(1.1);
+}
+
+#prompt > div > div {
+    border: 0.2em solid #5a0000;
+    box-shadow: inset 0.1em 0.1em darkred !important;
+}
+
+#prompt > div > div.isX {
+    border: 0.2em solid #00005a;
+    box-shadow: inset 0.1em 0.1em darkblue !important;
+}
+
+#prompt {
+    margin: 1em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 3em;
+}
+
+#prompt > div > div {
+    display: inline-block;
+    height: 1.5em;
+    width: 1.5em;
+    position: relative;
+    top: 0.3em;
+    margin: 0;
+}
+
+div.isX {
+    transition: all 1s ease;
+}
+
+div.win {
+    position: absolute;
+    grid-template-columns: subgrid;
+    grid-template-rows:  subgrid;
+    grid-column: 1 / 2;
+    background-color: none !important;
+    background-image: none;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    border-top: 4px solid red;
+    width: 100%;
+    height: calc(4 / 6 * 100%);
+    bottom: 1em;
+    rotate: 45deg;
+}
+
+#game > div > div.winning_square {
+    background-color: lightpink;
+    border-color: darkred;
+    box-shadow: inset 0.5em 0.5em red;
+    animation: flash-red 0.25s ease-in-out 0s 7;
+    animation-fill-mode: forwards;
+}
+
+#game > div > div.winning_square.isX {
+    background-color: lightblue;
+    border-color: darkblue;
+    box-shadow: inset 0.5em 0.5em blue;
+    animation: flash-blue 0.25s ease-in-out 0s 7;
+    animation-fill-mode: forwards;
+}
