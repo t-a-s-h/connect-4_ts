@@ -1,4 +1,3 @@
-import { count } from "console";
 import type { Grid } from "./grid"
 
 type Order = -1 | 0 | 1;
