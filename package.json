@@ -6,7 +6,7 @@
     "test": "./node_modules/.bin/mocha --inspect ./out/ts/tests/",
     "test1": "./node_modules/.bin/mocha --inspect",
     "build": "tsc",
-    "start": "node out/ts/game.js"
+    "start": "node out/game.js"
   },
   "devDependencies": {
     "@types/chai": "^5.2.3",

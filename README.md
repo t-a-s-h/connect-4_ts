@@ -1,6 +1,8 @@
 # Connect-4
 
 > This is a browser based Connect-4 game featuring a computer opponent using the minimax algorithm. It was built from mid November into late December. Originally, a C++ version without a "bot" opponent was created. This iteration focuses on introducing a bot opponent while maintaining object oriented programming throughout.
+## View on deployed site
+- https://t-a-s-h.github.io/connect-4_ts/
 ## Installation instructions (to run locally)
 - Download **this** repository.
 	- [Download ZIP](https://github.com/t-a-s-h/connect-4_ts/archive/refs/heads/main.zip)
