@@ -164,7 +164,7 @@ function minimax (g : Grid, depth : number, isMaximizing : boolean = true, alpha
                 max_value = value;
                 best.move = x
             }
-            alpha = Math.min(value, alpha);
+            alpha = Math.max(value, alpha);
             if (beta <= alpha) {
                 break;
             }   
